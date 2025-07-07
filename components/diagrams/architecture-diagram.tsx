@@ -107,10 +107,14 @@ export function ArchitectureDiagram({ className }: ArchitectureDiagramProps) {
       setTimeout(() => {
         const svg = diagramRef.current?.querySelector('svg')
         if (svg) {
+          const isMobile = window.innerWidth < 768
+          const defaultScale = isMobile ? '0.8' : '1.1'
+          const zoomedScale = isMobile ? '1.2' : '1.5'
+          
           svg.style.width = '100%'
           svg.style.height = 'auto'
           svg.style.maxWidth = 'none'
-          svg.style.transform = 'scale(1.1)'
+          svg.style.transform = `scale(${defaultScale})`
           svg.style.transformOrigin = 'center center'
           svg.style.cursor = 'zoom-in'
           
@@ -118,12 +122,12 @@ export function ArchitectureDiagram({ className }: ArchitectureDiagramProps) {
           let isZoomed = false
           svg.addEventListener('click', () => {
             if (!isZoomed) {
-              svg.style.transform = 'scale(1.5)'
+              svg.style.transform = `scale(${zoomedScale})`
               svg.style.cursor = 'zoom-out'
               svg.style.transition = 'transform 0.3s ease'
               isZoomed = true
             } else {
-              svg.style.transform = 'scale(1.1)'
+              svg.style.transform = `scale(${defaultScale})`
               svg.style.cursor = 'zoom-in'
               isZoomed = false
             }
@@ -136,10 +140,10 @@ export function ArchitectureDiagram({ className }: ArchitectureDiagramProps) {
   return (
     <div className={`w-full overflow-auto ${className}`}>
       <div className="mb-4 text-center">
-        <h3 className="text-lg font-semibold text-foreground mb-2">
+        <h3 className="text-base sm:text-lg font-semibold text-foreground mb-2">
           Kiến trúc hệ thống Kibana Alternative
         </h3>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-xs sm:text-sm text-muted-foreground px-2">
           Sơ đồ tổng quan về cách các thành phần tương tác với nhau
         </p>
       </div>
@@ -147,8 +151,8 @@ export function ArchitectureDiagram({ className }: ArchitectureDiagramProps) {
         ref={diagramRef} 
         className="w-full overflow-x-auto"
         style={{ 
-          minHeight: '1000px',
-          padding: '20px'
+          minHeight: window.innerWidth < 768 ? '600px' : '1000px',
+          padding: window.innerWidth < 768 ? '10px' : '20px'
         }}
       />
     </div>

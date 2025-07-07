@@ -164,7 +164,7 @@ export function ComparisonChart({ data, title }: ComparisonChartProps) {
 
   return (
     <div className="w-full">
-      <div className="h-96 lg:h-[500px]">
+      <div className="h-64 sm:h-80 md:h-96 lg:h-[500px]">
         <Bar data={chartData} options={options} />
       </div>
       <div className="mt-4 text-center text-sm text-muted-foreground">

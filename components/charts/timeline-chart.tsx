@@ -170,7 +170,7 @@ export function TimelineChart({ className, startDate = new Date("2025-07-07") }:
 
   return (
     <div className={`w-full ${className}`}>
-      <div className="h-96 lg:h-[500px]">
+      <div className="h-64 sm:h-80 md:h-96 lg:h-[500px]">
         <Line data={data} options={options} />
       </div>
       <div className="mt-4 text-center text-sm text-muted-foreground">

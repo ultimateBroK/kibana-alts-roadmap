@@ -340,11 +340,11 @@ export default function ComparisonPage() {
 
   return (
     <div className="space-y-8">
-      <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight">
+      <div className="text-center space-y-4 px-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
           So sánh và phân tích rủi ro
         </h1>
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+        <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
           Đánh giá chi tiết các lựa chọn công nghệ và những rủi ro tiềm ẩn
         </p>
       </div>
@@ -356,7 +356,7 @@ export default function ComparisonPage() {
         </TabsList>
 
         <TabsContent value="comparison" className="space-y-6">
-          <div className="flex gap-2 justify-center">
+          <div className="flex flex-wrap gap-2 justify-center px-4">
             <Button
               variant={selectedCategory === "data" ? "default" : "outline"}
               onClick={() => setSelectedCategory("data")}
@@ -416,7 +416,7 @@ export default function ComparisonPage() {
                       </span>
                     </div>
 
-                    <div className="grid gap-4 md:grid-cols-5">
+                    <div className="grid gap-2 sm:gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-5">
                       {Object.entries(option.score).map(([metric, score]) => (
                         <div key={metric} className="text-center">
                           <div className="text-sm text-muted-foreground capitalize">
@@ -439,7 +439,7 @@ export default function ComparisonPage() {
                       ))}
                     </div>
 
-                    <div className="grid gap-4 md:grid-cols-2">
+                    <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
                       <div>
                         <h4 className="font-medium text-green-600 mb-2 flex items-center gap-2">
                           <CheckCircle2 className="h-4 w-4" />
@@ -522,7 +522,7 @@ export default function ComparisonPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="text-center p-4 bg-green-50 rounded-lg">
                   <div className="text-3xl font-bold text-green-600">3</div>
                   <div className="text-sm text-muted-foreground">Mục Rủi ro Thấp</div>

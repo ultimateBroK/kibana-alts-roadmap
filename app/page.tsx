@@ -94,21 +94,21 @@ export default function Home() {
   return (
     <>
       <div className="space-y-8">
-        <div className="text-center space-y-4">
-          <h1 className="text-4xl font-bold tracking-tight">
+        <div className="text-center space-y-4 px-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
             Giải mã công nghệ sử dụng
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
             Hiểu rõ từng thành phần trong hệ thống trực quan hóa dữ liệu mạnh mẽ tương tự Kibana
           </p>
         </div>
 
         <Tabs defaultValue="overview" className="space-y-4">
-          <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="overview">Tổng quan</TabsTrigger>
-            <TabsTrigger value="details">Phân tích chi tiết</TabsTrigger>
-            <TabsTrigger value="architecture">Kiến trúc hệ thống</TabsTrigger>
-            <TabsTrigger value="why">Lý do lựa chọn</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 gap-1">
+            <TabsTrigger value="overview" className="text-xs sm:text-sm">Tổng quan</TabsTrigger>
+            <TabsTrigger value="details" className="text-xs sm:text-sm">Phân tích chi tiết</TabsTrigger>
+            <TabsTrigger value="architecture" className="text-xs sm:text-sm">Kiến trúc hệ thống</TabsTrigger>
+            <TabsTrigger value="why" className="text-xs sm:text-sm">Lý do lựa chọn</TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview" className="space-y-4">
@@ -120,7 +120,7 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="grid gap-6 md:grid-cols-3">
+                <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
                   {techStackLayers.map((layer) => {
                     const Icon = layer.icon
                     return (
@@ -160,7 +160,7 @@ export default function Home() {
                 <CardTitle>Điểm mạnh của Công nghệ Được chọn</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid gap-4 md:grid-cols-2">
+                <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
                   <div className="flex items-start gap-3">
                     <Zap className="h-5 w-5 text-accent mt-0.5" />
                     <div>
@@ -217,7 +217,7 @@ export default function Home() {
                       <div key={comp.name} className="space-y-3">
                         <h4 className="font-semibold text-lg">{comp.name}</h4>
                         <p className="text-muted-foreground">{comp.description}</p>
-                        <div className="grid gap-4 md:grid-cols-2">
+                        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
                           <div>
                             <h5 className="font-medium text-green-600 mb-2">Thế mạnh</h5>
                             <ul className="space-y-1">

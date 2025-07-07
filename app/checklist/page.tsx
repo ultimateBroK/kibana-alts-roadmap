@@ -245,17 +245,17 @@ export default function ChecklistPage() {
 
   return (
     <div className="space-y-8">
-      <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight">
+      <div className="text-center space-y-4 px-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
           Danh sách kiểm tra dự án
         </h1>
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+        <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
           Theo dõi tiến độ chi tiết từng task trong lộ trình 12 tuần
         </p>
       </div>
 
       {/* Statistics Cards */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-4 grid-cols-2 sm:grid-cols-4">
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium">Tiến độ tổng thể</CardTitle>
@@ -306,7 +306,7 @@ export default function ChecklistPage() {
       </div>
 
       {/* Category Filter */}
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 px-4 sm:px-0">
         {categories.map(category => (
           <Button
             key={category.id}
@@ -360,11 +360,11 @@ export default function ChecklistPage() {
             {filteredTasks.map((task) => (
               <div
                 key={task.id}
-                className={`border rounded-lg p-4 transition-all hover:shadow-md border-l-4 ${getCategoryColor(task.category)} ${
+                className={`border rounded-lg p-3 sm:p-4 transition-all hover:shadow-md border-l-4 ${getCategoryColor(task.category)} ${
                   task.completed ? "bg-green-50 opacity-75" : ""
                 }`}
               >
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-2 sm:gap-4">
                   <button
                     onClick={() => toggleTask(task.id)}
                     className="mt-1"
@@ -376,12 +376,12 @@ export default function ChecklistPage() {
                     )}
                   </button>
                   
-                  <div className="flex-1 space-y-2">
-                    <div className="flex items-start justify-between">
+                  <div className="flex-1 space-y-1 sm:space-y-2">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                       <h4 className={`font-semibold ${task.completed ? "line-through text-gray-500" : ""}`}>
                         {task.title}
                       </h4>
-                      <div className="flex gap-2">
+                      <div className="flex flex-wrap gap-2">
                         <span className={`text-xs px-2 py-1 rounded-full ${getPriorityColor(task.priority)}`}>
                           {task.priority}
                         </span>

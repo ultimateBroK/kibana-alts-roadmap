@@ -314,20 +314,20 @@ export default function RoadmapPage() {
 
   return (
     <div className="space-y-8">
-      <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight">
+      <div className="text-center space-y-4 px-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
           Lộ trình và khuyến nghị hành động
         </h1>
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+        <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
           Kế hoạch chi tiết từng bước, được thiết kế cho ADHD-friendly approach
         </p>
       </div>
 
       <Tabs defaultValue="timeline" className="space-y-4">
-        <TabsList className="grid w-full grid-cols-3">
-          <TabsTrigger value="timeline">Timeline</TabsTrigger>
-          <TabsTrigger value="actions">Actionable Steps</TabsTrigger>
-          <TabsTrigger value="motivation">Motivation Tips</TabsTrigger>
+        <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 gap-1">
+          <TabsTrigger value="timeline" className="text-xs sm:text-sm">Timeline</TabsTrigger>
+          <TabsTrigger value="actions" className="text-xs sm:text-sm">Actionable Steps</TabsTrigger>
+          <TabsTrigger value="motivation" className="text-xs sm:text-sm">Motivation Tips</TabsTrigger>
         </TabsList>
 
         <TabsContent value="timeline" className="space-y-6">
@@ -448,7 +448,7 @@ export default function RoadmapPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid gap-4 md:grid-cols-2">
+              <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
                 {motivationalTips.map((tip, index) => {
                   const Icon = tip.icon
                   return (
